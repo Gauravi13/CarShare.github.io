@@ -141,12 +141,6 @@
                   <!--Google Map-->
                   <div id="googleMap"></div>
                   
-                  <!--Sign up button-->
-                  <?php
-                  if(!isset($_SESSION["user_id"])){
-                      echo '<button type="button" class="btn btn-lg green signup" data-toggle="modal" data-target="#signupModal">Sign up-It\'s free</button>';
-                  }
-                  ?>
                   <div id="results">
                     <!--will be filled with Ajax Call-->
                 </div>
@@ -208,123 +202,6 @@
       </div>
       </div>
       </form>
-
-    <!--Sign up form--> 
-      <form method="post" id="signupform">
-        <div class="modal" id="signupModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button class="close" data-dismiss="modal">
-                    &times;
-                  </button>
-                  <h4 id="myModalLabel">
-                    Sign up today and Start using our Online Notes App! 
-                  </h4>
-              </div>
-              <div class="modal-body">
-                  
-                  <!--Sign up message from PHP file-->
-                  <div id="signupmessage"></div>
-                  
-                  <div class="form-group">
-                      <label for="username" class="sr-only">Username:</label>
-                      <input class="form-control" type="text" name="username" id="username" placeholder="Username" maxlength="30">
-                  </div>
-                  <div class="form-group">
-                      <label for="firstname" class="sr-only">Firstname:</label>
-                      <input class="form-control" type="text" name="firstname" id="firstname" placeholder="Firstname" maxlength="30">
-                  </div>
-                  <div class="form-group">
-                      <label for="lastname" class="sr-only">Lastname:</label>
-                      <input class="form-control" type="text" name="lastname" id="lastname" placeholder="Lastname" maxlength="30">
-                  </div>
-                  <div class="form-group">
-                      <label for="email" class="sr-only">Email:</label>
-                      <input class="form-control" type="email" name="email" id="email" placeholder="Email Address" maxlength="50">
-                  </div>
-                  <div class="form-group">
-                      <label for="password" class="sr-only">Choose a password:</label>
-                      <input class="form-control" type="password" name="password" id="password" placeholder="Choose a password" maxlength="30">
-                  </div>
-                  <div class="form-group">
-                      <label for="password2" class="sr-only">Confirm password</label>
-                      <input class="form-control" type="password" name="password2" id="password2" placeholder="Confirm password" maxlength="30">
-                  </div>
-                  <div class="form-group">
-                      <label for="phonenumber" class="sr-only">Telephone:</label>
-                      <input class="form-control" type="text" name="phonenumber" id="phonenumber" placeholder="Telephone Number" maxlength="15">
-                  </div>
-                  <div class="form-group">
-                      <label><input type="radio" name="gender" id="male" value="male">Male</label>
-                      <label><input type="radio" name="gender" id="female" value="female">Female</label>
-                  </div>
-                  <div class="form-group">
-                      <label for="moreinformation">Comments: </label>
-                      <textarea name="moreinformation" class="form-control" rows="5" maxlength="300"></textarea>
-                  </div>
-              </div>
-              <div class="modal-footer">
-                  <input class="btn green" name="signup" type="submit" value="Sign up">
-                <button type="button" class="btn btn-default" data-dismiss="modal">
-                  Cancel
-                </button>
-              </div>
-          </div>
-      </div>
-      </div>
-      </form>
-
-    <!--Forgot password form-->
-      <form method="post" id="forgotpasswordform">
-        <div class="modal" id="forgotpasswordModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button class="close" data-dismiss="modal">
-                    &times;
-                  </button>
-                  <h4 id="myModalLabel">
-                    Forgot Password? Enter your email address: 
-                  </h4>
-              </div>
-              <div class="modal-body">
-                  
-                  <!--forgot password message from PHP file-->
-                  <div id="forgotpasswordmessage"></div>
-                  
-
-                  <div class="form-group">
-                      <label for="forgotemail" class="sr-only">Email:</label>
-                      <input class="form-control" type="email" name="forgotemail" id="forgotemail" placeholder="Email" maxlength="50">
-                  </div>
-              </div>
-              <div class="modal-footer">
-                  <input class="btn green" name="forgotpassword" type="submit" value="Submit">
-                <button type="button" class="btn btn-default" data-dismiss="modal">
-                  Cancel
-                </button>
-                <button type="button" class="btn btn-default pull-left" data-dismiss="modal" data-target="signupModal" data-toggle="modal">
-                  Register
-                </button>  
-              </div>
-          </div>
-      </div>
-      </div>
-      </form>
-    <!-- Footer-->
-      <div class="footer">
-          <div class="container">
-              <p></p>
-          </div>
-      </div>
-      
-      <!--Spinner-->
-      <div id="spinner">
-         <img src='ajax-loader.gif' width="64" height="64" />
-         <br>Loading..
-      </div>
-      
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script src="map.js"></script>  
