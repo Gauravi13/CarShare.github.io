@@ -40,7 +40,7 @@ if(!$result){
 }else{
     //send email with link to activatenewemail.php with current email, new email and activation code
     $message = "Please click on this link prove that you own this email:\n\n";
-$message .= "http://carsharingwebsitefinal.thecompletewebhosting.com/activatenewemail.php?email=" . urlencode($email) . "&newemail=" . urlencode($newemail) . "&key=$activationKey";
+$message .= "https://gauravi13.github.io/CarShare.github.io/activatenewemail.php?email=" . urlencode($email) . "&newemail=" . urlencode($newemail) . "&key=$activationKey";
 if(mail($newemail, 'Email Update for you Online Notes App', $message, 'From:'.'developmentisland@gmail.com')){
        echo "<div class='alert alert-success'>An email has been sent to $newemail. Please click on the link to prove you own that email address.</div>";
 }
