@@ -1,29 +1,3 @@
-<?php
-session_start();
-include('connection.php');
-if(!isset($_SESSION['user_id'])){
-    header("location: index.php");
-}
-?>
-
-<?php
-$user_id = $_SESSION['user_id'];
-
-//get username and email
-$sql = "SELECT * FROM users WHERE user_id='$user_id'";
-$result = mysqli_query($link, $sql);
-
-$count = mysqli_num_rows($result);
-
-if($count == 1){
-    $row = mysqli_fetch_array($result, MYSQL_ASSOC); 
-    $username = $row['username'];
-    $picture = $row['profilepicture'];
-}else{
-    echo "There was an error retrieving the username and email from the database";   
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,15 +5,6 @@ if($count == 1){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Trips</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-      <link href="styling.css" rel="stylesheet">
-      <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
-      <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCwJ 2Vepe9L2Miuh7QH87SR_RItIXHlX6Q"></script>
-      <style>
         #container{
             margin-top:120px;   
         }
